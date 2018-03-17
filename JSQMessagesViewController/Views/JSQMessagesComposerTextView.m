@@ -169,8 +169,8 @@
     if ([self.text length] == 0 && self.placeHolder) {
         [self.placeHolderTextColor set];
 
-        [self.placeHolder drawInRect:CGRectInset(rect, 7.0f, 5.0f)
-                      withAttributes:[self jsq_placeholderTextAttributes]];
+        [self.placeHolder drawInRect:UIEdgeInsetsInsetRect(rect, self.placeHolderInsets)
+                       withAttributes:[self jsq_placeholderTextAttributes]];
     }
 }
 
