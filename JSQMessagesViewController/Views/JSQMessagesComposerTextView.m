@@ -63,6 +63,7 @@
 
     _placeHolder = nil;
     _placeHolderTextColor = [UIColor lightGrayColor];
+    _placeHolderInsets = UIEdgeInsetsMake(5.0, 7.0, 5.0, 7.0);
 
     [self jsq_addTextViewNotificationObservers];
 }
@@ -113,6 +114,16 @@
     }
 
     _placeHolderTextColor = placeHolderTextColor;
+    [self setNeedsDisplay];
+}
+
+- (void)setPlaceHolderInsets:(UIEdgeInsets)placeHolderInsets
+{
+    if (UIEdgeInsetsEqualToEdgeInsets(placeHolderInsets, _placeHolderInsets)) {
+        return;
+    }
+    
+    _placeHolderInsets = placeHolderInsets;
     [self setNeedsDisplay];
 }
 
